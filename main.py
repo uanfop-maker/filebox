@@ -183,5 +183,5 @@ async def storage_info(request: Request):
 # ── SPA ──────────────────────────────────────────────────────────────────────
 
 @app.get("/{full_path:path}", response_class=HTMLResponse, include_in_schema=False)
-async def spa(_: str):
+async def spa(full_path: str = ""):
     return FileResponse("static/index.html")
